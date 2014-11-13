@@ -11,6 +11,8 @@
 *.class
 
 # generated files - android project subfolder
+platforms/
+plugins/
 Android/bin/
 Android/gen/
 Android/assets/
