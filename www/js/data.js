@@ -26,6 +26,5 @@ var MemoryStore = function(successCallback, errorCallback) {
     this.classes = [];
     this.office_hours = [];
     this.quizzes = [];
-    this.polls = [];
     callLater(successCallback);
 }
