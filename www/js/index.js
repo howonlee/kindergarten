@@ -26,7 +26,7 @@ var app = {
     $('.employee-list').html(self.employeeLiTpl([
           {"id": 500, "firstName": "walla"},
           {"id": 501, "firstName": "boink"}
-          ]);
+          ]));
   },
 
   // Update DOM on a Received Event
