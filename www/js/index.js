@@ -2,8 +2,6 @@ var app = {
   // Application Constructor
   initialize: function() {
     var self = this;
-    this.homeTpl = Handlebars.compile($("#home-tpl").html());
-    this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
     this.bindEvents();
   },
   // Bind Event Listeners
@@ -19,14 +17,6 @@ var app = {
   // function, we must explicitly call 'app.receivedEvent(...);'
   onDeviceReady: function() {
     app.receivedEvent('deviceready');
-  },
-
-  renderHomeView: function() {
-    var self = this;
-    $('.employee-list').html(self.employeeLiTpl([
-          {"id": 500, "firstName": "walla"},
-          {"id": 501, "firstName": "boink"}
-          ]));
   },
 
   // Update DOM on a Received Event
