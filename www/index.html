@@ -12,12 +12,11 @@
     <body>
     <script id="home-tpl" type="text/x-handlebars-template">
       <div class='header'><h1>Classes</h1></div>
-      <div class='search-bar'><input class='search-key' type="text"/></div>
-      <ul class='employee-list'></ul>
+      <ul class='class-list'></ul>
     </script>
-    <script id="employee-li-tpl" type="text/x-handlebars-template">
+    <script id="class-li-tpl" type="text/x-handlebars-template">
       {{#.}}
-      <li><a href="#employees/{{this.id}}">{{this.firstName}}</a></li>
+      <li><a href="#class/{{this.id}}">{{this.name}}</a></li>
       {{/.}}
     </script>
     <script type="text/javascript" src="cordova.js"></script>

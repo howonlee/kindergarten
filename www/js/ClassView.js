@@ -10,4 +10,4 @@ var ClassView = function(store) {
   this.initialize();
 }
 ClassView.homeTpl = Handlebars.compile($("#home-tpl").html());
-ClassView.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
+ClassView.employeeLiTpl = Handlebars.compile($("#class-li-tpl").html());
