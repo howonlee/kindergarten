@@ -54,13 +54,62 @@ var MemoryStore = function(successCallback, errorCallback) {
       }];
     this.office_hours = [
     {
+      "instructor_name": "Howon Lee",
+      "id": 200,
+      "location": "Huang Rm 210",
+      "day": "Tuesday",
+      "begin": "12 PM",
+      "end": "2 PM",
+      "class_id": 100,
+      "class_name": "CS147",
+      "queue": [
+      {"name": "Thuy Ny L", "problem": "PSET 2 1a"},
+      {"name": "Chris P", "problem": "PSET 2"}
+      ]
     },
     {
+      "instructor_name": "Susan Tang",
+      "id": 201,
+      "location": "Gates B24",
+      "day": "Monday",
+      "begin": "3 PM",
+      "end": "4 PM",
+      "class_id": 100,
+      "class_name": "CS147",
+      "queue": [
+      {"name": "Bob D", "problem": "PSET 2 1a"},
+      {"name": "Alice P", "problem": "PSET 2"}
+      ]
+
     },
     {
+      "instructor_name": "Charlie Smith",
+      "id": 202,
+      "location": "330- 120",
+      "day": "Thursday",
+      "begin": "1 PM",
+      "end": "4 PM",
+      "class_id": 100,
+      "class_name": "CS147",
+      "queue": [
+      {"name": "Matt Damon", "problem": "PSET 2 1a"},
+      {"name": "Bob D", "problem": "PSET 2"}
+      ]
     }];
     this.qsets = [
     {
+      "title": "Time Spent on PSET 2",
+      "time_remaining": "7 hours remaining",
+      "questions": [
+      {
+        "text": "Question 1 of 2:\n\n Who invented the Dynabook?",
+        "choices": ["Douglas Engelbart", "Steve Jobs", "Alan Kay", "James Landay"],
+        "is_multiplechoice": true
+      },
+      {
+        "text": "Question 2 of 2:\n\n True or False. For small buttons, the best color to use is blue.",
+        "is_multiplechoice": false
+      }]
     },
     {
     },
