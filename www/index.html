@@ -4,16 +4,23 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link href="assets/topcoat/css/topcoat-mobile-light.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Kindergarten</title>
     </head>
     <!-- don't forget to add fastclick -->
     <body>
-    <script id="home-tpl" type="text/x-handlebars-template">
-      <div class='header'><h1>Classes</h1></div>
-      <ul class='class-list'></ul>
-    </script>
+<script id="home-tpl" type="text/x-handlebars-template">
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item center full">
+            <h1 class="topcoat-navigation-bar__title">Classes</h1>
+        </div>
+    </div>
+    <div class="topcoat-list__container">
+        <ul class="topcoat-list list employee-list"></ul>
+    </div>
+</script>
     <script id="class-li-tpl" type="text/x-handlebars-template">
       {{#.}}
       <li><a href="#class/{{this.id}}">{{this.name}}</a></li>
