@@ -23,8 +23,48 @@ var MemoryStore = function(successCallback, errorCallback) {
         }
     }
 
-    this.classes = [];
-    this.office_hours = [];
-    this.quizzes = [];
+    this.classes = [
+      {
+        "name": "CS147",
+        "instructor": false,
+        "passcode": -1,
+        "id": 100,
+        "deleted": false
+      },
+      {
+        "name": "CS110",
+        "instructor": true,
+        "passcode": -1,
+        "id": 101,
+        "deleted": false
+      },
+      {
+        "name": "CS103",
+        "instructor": false,
+        "passcode": -1,
+        "id": 102,
+        "deleted": false
+      },
+      {
+        "name": "PSYCH209",
+        "instructor": false,
+        "passcode": -1,
+        "id": 103,
+        "deleted": true
+      }];
+    this.office_hours = [
+    {
+    },
+    {
+    },
+    {
+    }];
+    this.qsets = [
+    {
+    },
+    {
+    },
+    {
+    }];
     callLater(successCallback);
 }
