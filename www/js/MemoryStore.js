@@ -98,8 +98,9 @@ var MemoryStore = function(successCallback, errorCallback) {
     }];
     this.qsets = [
     {
-      "title": "Time Spent on PSET 2",
+      "title": "Reading Quiz 2",
       "time_remaining": "7 hours remaining",
+      "is_poll": false,
       "questions": [
       {
         "text": "Question 1 of 2:\n\n Who invented the Dynabook?",
