@@ -4,7 +4,10 @@ var ClassView = function(adapter, template, listItemTemplate) {
   }
   this.render = function() {
     this.el.html(template());
-    $(".class-list").html(listItemTemplate());
+    return this;
+  }
+  this.renderList = function() {
+    $(".class-list").html(listItemTemplate(adapter.classes));
     return this;
   }
   this.initialize();
