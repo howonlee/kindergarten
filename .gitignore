@@ -16,6 +16,7 @@ plugins/
 Android/bin/
 Android/gen/
 Android/assets/
+hooks/
 
 # generated files
 bin/
