@@ -11,6 +11,27 @@
     </head>
     <!-- don't forget to add fastclick -->
     <body>
+    <script id="home-tpl" type="text/x-handlebars-template">
+        <div class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item center full">
+                <h1 class="topcoat-navigation-bar__title">Classes</h1>
+            </div>
+        </div>
+        <div class="topcoat-list__container">
+            <ul class="topcoat-list list class-list"></ul>
+        </div>
+    </script>
+    <script id="class-li-tpl" type="text/x-handlebars-template">
+        {{#.}}
+        <li class="topcoat-list__item">
+            <a href="#class/{{id}}">
+                <p>{{name}}</p>
+                <p>{{title}}</p>
+            </a>
+        </li>
+        {{/.}}
+    </script>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/jquery.js"></script>
     <script type="text/javascript" src="lib/handlebars.js"></script>
