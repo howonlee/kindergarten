@@ -5,7 +5,7 @@ var app = {
     this.classLiTpl = Handlebars.compile($("#class-li-tpl").html());
     this.adapter = new MemoryAdapter();
     this.adapter.initialize(function() {
-      $("body").html(new HomeView(adapter, homeTpl, classLiTpl));
+      $("body").html(new ClassView(adapter, homeTpl, classLiTpl));
     });
     this.bindEvents();
   },
