@@ -1,6 +1,10 @@
 var app = {
   initialize: function() {
     var self = this;
+    var adapter = new MemoryAdapter();
+    adapter.initialize().done(function() {
+      self.renderHomeView();
+    });
     this.bindEvents();
   },
 
@@ -11,6 +15,14 @@ var app = {
   onDeviceReady: function() {
     app.receivedEvent('deviceready');
   },
+
+  renderHomeView(): function() {
+    var html =
+      "<h1>Directory</h1>" +
+      "<input class='search-key' type='search' placeholder='Enter name'/>" +
+      "<ul class='employee-list'></ul>";
+    $('body').html(html);
+  }
 
   receivedEvent: function(id) {
     var parentElement = document.getElementById(id);
