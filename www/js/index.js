@@ -18,9 +18,19 @@ var app = {
 
   renderHomeView: function() {
     var html =
-      "<h1>Directory</h1>" +
-      "<input class='search-key' type='search' placeholder='Enter name'/>" +
-      "<ul class='employee-list'></ul>";
+      "<h1>Classes</h1>" +
+      "<ul class='class-list'>" +
+      "<li>CS110 Instructor</li>" +
+      "</ul>" +
+      '<button onclick="app.renderAddView()">Add Classes</button>';
+    $('body').html(html);
+  },
+
+  renderAddView: function() {
+    var html =
+      "<h1>Add Classes</h1>" +
+      "<input class='add-class' placeholder='Enter name'/>" +
+      '<button onclick="app.renderHomeView()">Add Class</button>';
     $('body').html(html);
   },
 
