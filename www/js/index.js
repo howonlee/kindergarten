@@ -5,7 +5,7 @@ var app = {
     this.classLiTpl = Handlebars.compile($("#class-li-tpl").html());
     this.adapter = new MemoryAdapter();
     this.adapter.initialize(function() {
-      self.renderHomeView();
+      $("body").html(new HomeView(adapter, homeTpl, classLiTpl));
     });
     this.bindEvents();
   },
@@ -16,14 +16,6 @@ var app = {
   
   onDeviceReady: function() {
     app.receivedEvent('deviceready');
-  },
-
-  renderHomeView: function() {
-    $('body').html(this.homeTpl());
-    $('.class-list').html(this.classLiTpl(this.adapter.classes));
-  },
-
-  renderAddView: function() {
   },
 
   receivedEvent: function(id) {
