@@ -32,7 +32,7 @@ var app = {
     var match = hash.match(this.ohUrl);
     if (match) {
       //implement findById now
-      adapter.findById(Number(match[1])).done(function(_class) {
+      adapter.findById(Number(match[1]), function(_class) {
         $('body').html(new OHView(adapter, this.ohTpl, _class).render().el);
       });
     }

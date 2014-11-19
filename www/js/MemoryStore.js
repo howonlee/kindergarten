@@ -5,16 +5,16 @@ var MemoryAdapter = function(successCallback, errorCallback) {
   }
 
   this.findById = function(id, callback) {
-    var employees = this.employees;
-    var employee = null;
-    var l = employees.length;
+    var classes = this.classes;
+    var _class = null;
+    var l = classes.length;
     for (var i=0; i < l; i++) {
-      if (employees[i].id === id) {
-        employee = employees[i];
+      if (classes[i].id === id) {
+        class = classes[i];
         break;
       }
     }
-    callLater(callback, employee);
+    callLater(callback, _class);
   }
 
   // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
