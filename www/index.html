@@ -26,16 +26,33 @@
         <li class="topcoat-list__item">
             <a href="#class/{{id}}">
                 <p>{{name}}</p>
-                <p>{{title}}</p>
             </a>
         </li>
         {{/.}}
+    </script>
+    <script id="oh-tpl" type="text/x-handlebars-template">
+        <div class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item left quarter">
+                <a class="topcoat-icon-button--quiet back-button" href="#">
+                    <span class="topcoat-icon topcoat-icon--back"></span>
+                </a>
+            </div>
+            <div class="topcoat-navigation-bar__item center half">
+                <h1 class="topcoat-navigation-bar__title">{{name}} Office Hours</h1>
+            </div>
+        </div>
+        <div class='details'>
+            <div class="topcoat-list__container scroller">
+            Blah wergle wergle blah
+            </div>
+        </div>
     </script>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/jquery.js"></script>
     <script type="text/javascript" src="lib/handlebars.js"></script>
     <script type="text/javascript" src="js/MemoryStore.js"></script>
+    <script type="text/javascript" src="js/OHView.js"></script>
     <script type="text/javascript" src="js/ClassView.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">

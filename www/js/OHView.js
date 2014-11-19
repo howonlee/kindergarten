@@ -1,13 +1,10 @@
-var ClassView = function(store) {
+var OHView = function(adapter, template, _class) {
   this.initialize = function() {
     this.el = $('<div/>');
-    this.el.on('keyup', '.search-key', this.findByName);
   }
   this.render = function() {
-    this.el.html(ClassView.template());
+    this.el.html(template(_class));
     return this;
   }
   this.initialize();
 }
-ClassView.homeTpl = Handlebars.compile($("#home-tpl").html());
-ClassView.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
