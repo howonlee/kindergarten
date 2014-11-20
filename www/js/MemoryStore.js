@@ -10,7 +10,7 @@ var MemoryAdapter = function(successCallback, errorCallback) {
     var l = classes.length;
     for (var i=0; i < l; i++) {
       if (classes[i].id === id) {
-        class = classes[i];
+        _class = classes[i];
         break;
       }
     }

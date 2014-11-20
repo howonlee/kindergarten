@@ -7,7 +7,7 @@ var app = {
     this.ohUrl = /^#oh\/(\d{1,})/;
     this.adapter = new MemoryAdapter();
     this.adapter.initialize(function() {
-      this.route();
+      self.route();
     });
     this.bindEvents();
   },
@@ -23,6 +23,7 @@ var app = {
 
   route: function() {
     var hash = window.location.hash;
+    var self = this;
     if (!hash) {
       var classView = new ClassView(self.adapter, self.homeTpl, self.classLiTpl);
       $("body").html(classView.render().el);
@@ -32,8 +33,8 @@ var app = {
     var match = hash.match(this.ohUrl);
     if (match) {
       //implement findById now
-      adapter.findById(Number(match[1]), function(_class) {
-        $('body').html(new OHView(adapter, this.ohTpl, _class).render().el);
+      app.adapter.findById(Number(match[1]), function(_class) {
+        $('body').html(new OHView(app.adapter, app.ohTpl, _class).render().el);
       });
     }
   },
