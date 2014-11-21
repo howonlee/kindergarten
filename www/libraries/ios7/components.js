@@ -585,8 +585,11 @@ prx.types.ios7_statusbar = {
 		var batteryInnerLeftPos= -3;
 		var batteryInnerTopPos= 6;
 		var textSize= 24;
-		console.log(_dims)
-		console.log(Math.floor(batteryHeight*percent))
+		var now = new Date();
+
+		
+		now.getMinutes()
+		
 		var cR = '';
 		cR += '<div id="'+_id+'" class="box pos type-ios7-statusbar" '+((item.overlay)? 'data-mpoverlay="1"': '')+'>';
 		
@@ -608,7 +611,7 @@ prx.types.ios7_statusbar = {
 		cR += '<div class="ios7-statusbar-signal-dot ios7-statusbar-signal-dot-empty liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-provider">PROTO.IO</div>';
 		cR += '</div>';
-		cR += '<div class="ios7-statusbar-time">16:20</div>';
+		cR += '<div class="ios7-statusbar-time">'+now.getHours()+':'+now.getMinutes()+'</div>';
 		cR += '<div class="ios7-statusbar-battery-life">';
 		cR += '<div class="ios7-statusbar-battery-life-icon liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color">';
 		cR += '<div class="ios7-statusbar-battery-life-icon-battery-pole">';
@@ -635,8 +638,7 @@ prx.types.ios7_statusbar = {
 		var batteryInnerLeftPos= -3;
 		var batteryInnerTopPos= 6;
 		var textSize= 24;
-		console.log(_dims)
-		console.log(Math.floor(batteryHeight*percent))
+
 		$('#'+_id).find('.ios7-statusbar-battery-life-icon').css({'width': Math.floor(batteryWidth*percent), 'height': Math.floor(batteryHeight*percent), 'margin-top': Math.floor(batteryMarginTop*percent)+'px'});
 		$('#'+_id).find('.ios7-statusbar-signal-dot').width(Math.floor(signalDotDims*percent)).height(Math.floor(signalDotDims*percent)).css({'margin-top': Math.floor(signalDotMargin*percent)+'px', 'margin-bottom':Math.floor(signalDotMargin*percent)+'px'});
 		$('#'+_id).find('.ios7-statusbar-provider, .ios7-statusbar-battery-life-text, .ios7-statusbar-time').css('font-size', textSize*percent+'px');

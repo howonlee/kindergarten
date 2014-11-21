@@ -74,8 +74,8 @@
 }
 
 .ios7-statusbar-signal {
-	flex-basis: 1px;
-	flex-grow: 1;
+	-webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-grow: 1; flex-grow: 1; 
+	-webkit-flex-basis: 1px; -ms-flex-basis: 1px; flex-basis: 1px;
 	padding-left: 15px;
 	height: 100%;
 }
@@ -98,13 +98,13 @@
 
 .type-ios7-statusbar .ios7-statusbar-time {
 	font-family: HelveticaNeue-Medium,Helvetica,Verdana,Arial,sans-serif;
-	flex-grow: 0;
+	-webkit-flex-grow: 0; -ms-flex-grow: 0; flex-grow: 0;
 	text-align: center;
 }
 
 .type-ios7-statusbar .ios7-statusbar-battery-life {
-	flex-basis: 1px;
-	flex-grow: 1;
+	-webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-grow: 1; flex-grow: 1; 
+	-webkit-flex-basis: 1px; -ms-flex-basis: 1px; flex-basis: 1px;
 	padding-right: 15px;
 	text-align: right;
 	height: 100%;

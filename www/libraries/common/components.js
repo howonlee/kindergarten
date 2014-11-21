@@ -190,19 +190,38 @@ prx.types.symbol = {
       					,values: [{value: 'none',displayValue: 'No'},{value: 'horizontal',displayValue: 'Horizontally'},{value: 'vertical',displayValue: 'Vertically'},{value: 'omni',displayValue: 'Omni-directional'}]
       					,onChange: function(item){
 	      					if(item.scroll == '' || item.scroll == 'none') {
-	      						$('#property-scrollsnap, #property-pinchzoom, #property-momentum, #property-hscrollbar, #property-vscrollbar, #property-lockdirection, #property-bounce').hide();
+	      						$('#property-scrollsnap, #property-pinchzoom, #property-momentum, #property-scrollbars, #property-lockdirection, #property-bounce').hide();
 	      						$('#property-propagateevents').show();
 	      					} else {
-	      						$('#property-scrollsnap, #property-pinchzoom, #property-momentum, #property-bounce').show();
+	      						$('#property-scrollsnap, #property-pinchzoom, #property-momentum, #property-bounce, #property-scrollbars').show();
 	      						$('#property-propagateevents').hide();
 	      						if(item.scroll == 'omni') {
-	      							$('#property-hscrollbar, #property-vscrollbar, #property-lockdirection').show();
-	      						} else if(item.scroll == 'horizontal') {
-	      							$('#property-vscrollbar, #property-lockdirection').hide();
-	      							$('#property-hscrollbar').show();
+	      							$('#property-lockdirection').show();
+	      							if(typeof(item.scrollbars) == "undefined") {
+	      								if(item.vscrollbar || item.hscrollbar) {
+	      									$('#p-'+item.id+'-scrollbars').prop('checked', true)
+	      								} else {
+	      									$('#p-'+item.id+'-scrollbars').prop('checked', false)
+	      								}
+	      							}
 	      						} else {
-	      							$('#property-hscrollbar, #property-lockdirection').hide();
-	      							$('#property-vscrollbar').show();
+	      							$('#property-lockdirection').hide();
+	      							if(typeof(item.scrollbars) == "undefined") {
+	      								if(item.scroll == 'horizontal') {
+		      								if(item.hscrollbar) {
+		      									$('#p-'+item.id+'-scrollbars').prop('checked', true)
+		      								} else {
+		      									$('#p-'+item.id+'-scrollbars').prop('checked', false)
+		      								}
+		      							} 
+	      								if(item.scroll == 'vertical') {
+		      								if(item.vscrollbar) {
+		      									$('#p-'+item.id+'-scrollbars').prop('checked', true)
+		      								} else {
+		      									$('#p-'+item.id+'-scrollbars').prop('checked', false)
+		      								}
+		      							} 
+	      							}
 	      						}
 	      					}
 	      				}
@@ -256,7 +275,8 @@ prx.types.symbol = {
       						caption: 'Inertia',
       						rerender: true
       					}
-	      			},{
+	      			},
+	      			/*{
               			caption: 'Show horizontal scrollbar'
               			,name: 'hscrollbar'
               			,type: 'onoff'
@@ -284,7 +304,39 @@ prx.types.symbol = {
       						caption: 'Vertical scrollbar',
       						rerender: true
       					}
-	      			},{
+	      			},*/
+	      			{
+              			caption: 'Show scrollbars'
+              			,name: 'scrollbars'
+              			,type: 'onoff'
+              			,value: function(item,name) {
+              				if(typeof(item.scrollbars) == "undefined") {
+              					switch (item.scroll) {
+              					case "omni":
+              						var _scrollbars = (eval(item.hscrollbar) || eval(item.vscrollbar)) ? true : false;
+              						break;
+              					case "horizontal":
+              						var _scrollbars = (eval(item.hscrollbar)) ? true : false;
+              						break;
+              					case "vertical":
+              						var _scrollbars = (eval(item.vscrollbar)) ? true : false;
+              						break;
+              					default:
+              						break;
+              					}
+              					return _scrollbars;
+              				}
+              				return item.scrollbars;
+              			}
+	      				,hiddenByDefault: function(item){
+	      					return (item.scroll=='' || item.scroll=='none');
+	      				}
+	      				,changeProperty: {
+      						caption: 'Scrollbars',
+      						rerender: true
+      					}
+	      			},
+	      			{
               			caption: 'Enable Pinch / Zoom'
               			,name: 'pinchzoom'
               			,type: 'onoff'
