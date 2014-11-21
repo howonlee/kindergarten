@@ -17,6 +17,7 @@
       <script type="text/javascript" src="./scripts/player-engine-min.js?5.10.14.1"></script>
       <link type="text/css" href="./libraries/common/components.css" rel="Stylesheet" /> 	
       <script type="text/javascript" src="./libraries/common/components.js"></script> 
+      <script type="text/javascript" src="./libraries/fastclick.js"></script> 
       <link type="text/css" href="./libraries/icons/components.css" rel="Stylesheet" /> 	
       <script type="text/javascript" src="./libraries/icons/components.js"></script> 
       <link type="text/css" href="./libraries/ios7/components.css" rel="Stylesheet" /> 	
@@ -31,6 +32,11 @@
 			}
 		</style>
 			<script type="text/javascript">
+        if ('addEventListener' in document) {
+          document.addEventListener('DOMContentLoaded', function() {
+              FastClick.attach(document.body);
+          }, false);
+        }
 				prx.spaces = false;
 				if (window.screen.height==568) { // iPhone 4 (iPhone5/iOS6)
 					document.querySelector("meta[name=viewport]").content="width=320.1, minimum-scale=0.50, maximum-scale=0.50, initial-scale=0.50, user-scalable=no, target-densitydpi=device-dpi";
