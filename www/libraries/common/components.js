@@ -2863,6 +2863,7 @@ prx.components.image = {
 	,actions:[]
   	,overlay: false
   	,autoResize: true
+  	,aspectratio: true
 }
 
 prx.components.icon = {
@@ -2879,6 +2880,7 @@ prx.components.icon = {
 	,propagateEvents: false
 	,actions:[]
   	,overlay: false
+  	,aspectratio: true
 }
 
 

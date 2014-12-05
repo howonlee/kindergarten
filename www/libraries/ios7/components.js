@@ -611,7 +611,7 @@ prx.types.ios7_statusbar = {
 		cR += '<div class="ios7-statusbar-signal-dot ios7-statusbar-signal-dot-empty liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-provider">PROTO.IO</div>';
 		cR += '</div>';
-		cR += '<div class="ios7-statusbar-time">'+now.getHours()+':'+now.getMinutes()+'</div>';
+		cR += '<div class="ios7-statusbar-time">'+("0" + now.getHours()).substr(-2,2)+':'+("0" + now.getMinutes()).substr(-2,2)+'</div>';
 		cR += '<div class="ios7-statusbar-battery-life">';
 		cR += '<div class="ios7-statusbar-battery-life-icon liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color">';
 		cR += '<div class="ios7-statusbar-battery-life-icon-battery-pole">';
@@ -3637,6 +3637,8 @@ prx.types.ios7_actionsheet = {
 	,onDisplay: function(item,containerid,pageid,symbol) {
 		var _id = (!containerid) ? item.id : containerid+'-'+item.id;
 		
+		if( item.detachlast && item.buttons.length == 1) item.detachlast = false;
+		
 		var cR = '';
 		cR += '<div id="'+_id+'" class="box pos type-ios7-actionsheet">';
 		
@@ -4266,6 +4268,7 @@ prx.types.ios8_map_tag = {
 		if(item.imgSrc2.url != '') {
 			cR += '<div class="ios8-map-tag-icon-right actions-actions1"></div>';
 		}
+		cR += '</div>';
 		cR += '</div>';
 		return cR;
 	}

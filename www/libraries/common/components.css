@@ -133,7 +133,7 @@ input,textarea, .type-text *, .type-richtext *, .type-html *{
 	display: block; width: 24px; height: 24px;
 	position: absolute; top: 50%; left: 50%;
 	margin: -12px 0 0 -12px;
-	background: url(/images/editor/icons-sprite-inactive-5.png) -192px -96px; 	
+	background: url(/images/editor/icons-sprite-inactive-6.png) -192px -96px; 	
 }
 
 .player .type-actionarea .inner-rec div:before {
